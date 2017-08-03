@@ -13,26 +13,25 @@ void Skeleton::load(const std::string _tgf_filename)
 //improve this method.
 void Skeleton::pose(RotationList& _pose)
 {
-    RotationList vQ;
-    std::vector<Eigen::Vector3d> vT;
-    igl::forward_kinematics(m_BindPosejoints,m_BindPoseBoneEdges,m_parent,_pose,vQ,vT);
+    igl::forward_kinematics(m_BindPosejoints,m_BindPoseBoneEdges,m_parent,_pose,m_worldSpaceRotations,m_worldSpaceTraslations);
 
     const int dim = m_BindPosejoints.cols();
-    Eigen::MatrixXd T(m_BindPoseBoneEdges.rows()*(dim+1),dim);
-    for(int e = 0;e<m_BindPoseBoneEdges.rows();e++)
+    m_transformationMatrix = Eigen::MatrixXd(m_BindPoseBoneEdges.rows()*(dim+1),dim);
+    for(size_t bone_index = 0;bone_index<m_BindPoseBoneEdges.rows();bone_index++)
     {
       Eigen::Affine3d a = Eigen::Affine3d::Identity();
-      a.translate(vT[e]);
-      a.rotate(vQ[e]);
-      T.block(e*(dim+1),0,dim+1,dim) = a.matrix().transpose().block(0,0,dim+1,dim);
+      a.translate(m_worldSpaceTraslations[bone_index]);
+      a.rotate(m_worldSpaceRotations[bone_index]);
+      m_transformationMatrix.block(bone_index*(dim+1),0,dim+1,dim) = a.matrix().transpose().block(0,0,dim+1,dim);
     }
 
-    Eigen::MatrixXd CT;
-    Eigen::MatrixXi BET;
-    igl::deform_skeleton(m_BindPosejoints,m_BindPoseBoneEdges,T,CT,BET);
 
-    m_joints = CT;
-    m_boneEdges = BET;
+    igl::deform_skeleton(m_BindPosejoints,
+                         m_BindPoseBoneEdges,
+                         m_transformationMatrix,
+                         m_joints,
+                         m_boneEdges);
+
 }
 
 void Skeleton::pose(const std::string _label, Eigen::Quaterniond _q)
@@ -54,7 +53,7 @@ void Skeleton::reset()
 
 void Skeleton::reset(const std::string _label)
 {
-//load the stored initial value for a specific koint and pose the skeleton
+//load the stored initial value for a specific joint and pose the skeleton
 }
 
 

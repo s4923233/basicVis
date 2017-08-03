@@ -1,3 +1,5 @@
+#ifndef SKELETON_H
+#define SKELETON_H
 #include <cstdio>
 #include <vector>
 
@@ -21,7 +23,12 @@ class Skeleton
     Eigen::MatrixXd m_joints;
     Eigen::MatrixXi m_boneEdges;
     Eigen::VectorXi m_parent;
-    RotationList m_jointOrientation;
+
+    Eigen::MatrixXd m_transformationMatrix;
+    RotationList m_worldSpaceRotations;
+    std::vector<Eigen::Vector3d> m_worldSpaceTraslations;
+
+    RotationList m_jointOrientation;//???
     std::map<std::string,size_t> m_jointsLabel;
 
     public:
@@ -31,6 +38,9 @@ class Skeleton
     const Eigen::MatrixXi& boneEdges()const             {return m_boneEdges;}
     const Eigen::VectorXi& boneParent()const            {return m_parent;}
     const RotationList& jointOrientation()const         {return m_jointOrientation;}
+    const RotationList& worldSpaceRotations()const      {return m_worldSpaceRotations;}
+    const std::vector<Eigen::Vector3d>& worldSpaceTraslations()const      {return m_worldSpaceTraslations;}
+
 
     void pose(RotationList& _pose);
     void pose(const std::string _label, Eigen::Quaterniond _q);
@@ -41,3 +51,4 @@ class Skeleton
     void setLabel(const std::string _label,size_t _jointIndex);
     void setLabel(const std::string _filename);
 };
+#endif

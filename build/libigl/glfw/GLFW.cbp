@@ -5,7 +5,7 @@
       <Option title="GLFW" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\libigl\;CMake Files\..\..\libigl\external\;CMake Files\..\..\libigl\external\nanogui\;CMake Files\..\..\libigl\external\nanogui\ext\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\CMake\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\CMake\modules\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\src\;CMake Files\..\..\libigl\shared\;CMake Files\..\..\libigl\shared\cmake\;CMake Files\cmake\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\libigl\;CMake Files\..\..\libigl\external\;CMake Files\..\..\libigl\external\nanogui\;CMake Files\..\..\libigl\external\nanogui\ext\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\CMake\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\CMake\modules\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\src\;CMake Files\..\..\libigl\external\tetgen\;CMake Files\..\..\libigl\shared\;CMake Files\..\..\libigl\shared\cmake\;CMake Files\cmake\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/Users/federicoleone/MasterProject/basicVis/build/libigl/glfw" />
@@ -252,6 +252,15 @@
       </Unit>
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/external/nanogui/ext/glfw/src/CMakeLists.txt">
           <Option virtualFolder="CMake Files\..\..\libigl\external\nanogui\ext\glfw\src\" />
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/external/tetgen/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\libigl\external\tetgen\" />
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/external/tetgen/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\libigl\external\tetgen\" />
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/external/tetgen/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\libigl\external\tetgen\" />
       </Unit>
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/shared/cmake/CMakeLists.txt">
           <Option virtualFolder="CMake Files\..\..\libigl\shared\cmake\" />

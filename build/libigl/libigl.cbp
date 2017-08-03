@@ -5,7 +5,7 @@
       <Option title="libigl" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\libigl\;CMake Files\..\..\libigl\external\;CMake Files\..\..\libigl\external\nanogui\;CMake Files\..\..\libigl\external\nanogui\ext\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\CMake\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\CMake\modules\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\src\;CMake Files\..\..\libigl\shared\;CMake Files\..\..\libigl\shared\cmake\;CMake Files\cmake\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\libigl\;CMake Files\..\..\libigl\external\;CMake Files\..\..\libigl\external\nanogui\;CMake Files\..\..\libigl\external\nanogui\ext\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\CMake\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\CMake\modules\;CMake Files\..\..\libigl\external\nanogui\ext\glfw\src\;CMake Files\..\..\libigl\external\tetgen\;CMake Files\..\..\libigl\shared\;CMake Files\..\..\libigl\shared\cmake\;CMake Files\cmake\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/Users/federicoleone/MasterProject/basicVis/build/libigl" />
@@ -123,6 +123,52 @@
             <DistClean command="/usr/bin/make -f &quot;/Users/federicoleone/MasterProject/basicVis/build/libigl/glfw/src/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="tetgen">
+         <Option output="/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/libtetgen.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTETLIBRARY" />
+            <Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1" />
+            <Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/include" />
+            <Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include" />
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/Makefile&quot;  VERBOSE=1 tetgen" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="tetgen/fast">
+         <Option output="/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/libtetgen.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTETLIBRARY" />
+            <Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1" />
+            <Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/include" />
+            <Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include" />
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/Makefile&quot;  VERBOSE=1 tetgen/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/federicoleone/MasterProject/basicVis/build/libigl/tetgen/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       </Build>
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/build/libigl/glfw/src/glfw_config.h">
          <Option target="glfw_objects"/>
@@ -186,6 +232,15 @@
       </Unit>
       <Unit filename="/Users/federicoleone/libigl/external/nanogui/ext/glfw/src/window.c">
          <Option target="glfw_objects"/>
+      </Unit>
+      <Unit filename="/Users/federicoleone/libigl/external/tetgen/predicates.cxx">
+         <Option target="tetgen"/>
+      </Unit>
+      <Unit filename="/Users/federicoleone/libigl/external/tetgen/tetgen.cxx">
+         <Option target="tetgen"/>
+      </Unit>
+      <Unit filename="/Users/federicoleone/libigl/external/tetgen/tetgen.h">
+         <Option target="tetgen"/>
       </Unit>
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
@@ -252,6 +307,15 @@
       </Unit>
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/external/nanogui/ext/glfw/src/CMakeLists.txt">
           <Option virtualFolder="CMake Files\..\..\libigl\external\nanogui\ext\glfw\src\" />
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/external/tetgen/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\libigl\external\tetgen\" />
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/external/tetgen/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\libigl\external\tetgen\" />
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/external/tetgen/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\libigl\external\tetgen\" />
       </Unit>
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/../../libigl/shared/cmake/CMakeLists.txt">
           <Option virtualFolder="CMake Files\..\..\libigl\shared\cmake\" />
