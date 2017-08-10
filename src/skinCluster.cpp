@@ -1,4 +1,5 @@
 #include "skinCluster.h"
+#include "submesh.h"
 #include <igl/copyleft/tetgen/tetrahedralize.h>
 #include <igl/dqs.h>
 #include <igl/boundary_conditions.h>
@@ -71,5 +72,48 @@ void SkinCluster::updateMesh(RotationList _absoluteRotations, std::vector<Eigen:
              _absoluteRotations,
              _absoluteTraslations,
              m_mesh->m_vertices);
+
+
+    size_t nBoneEdges = m_skeleton->boneEdges().rows();
+
+    Eigen::MatrixXd G,P,BBox;
+    for(int bone_i=0; bone_i<nBoneEdges;bone_i++)
+    {
+
+        Eigen::Affine3d A = Eigen::Affine3d::Identity();
+        A.translate(_absoluteTraslations[bone_i]);
+        A.rotate(_absoluteRotations[bone_i]);
+
+//        Eigen::Affine3d Translate = Eigen::Affine3d::Identity();
+//        Translate.translate(_absoluteTraslations[bone_i]);
+
+//        Eigen::Affine3d Rotate = Eigen::Affine3d::Identity();
+//        Rotate.rotate(_absoluteRotations[bone_i]);
+
+//        Eigen::Affine3d A = Eigen::Affine3d::Identity();
+//        A = Rotate*Translate;
+
+        SubMesh& submesh = m_mesh->m_submeshes[bone_i];
+
+        //grid vertices
+        G = submesh.gridVertices();
+        G.transpose() = A.linear()*G.transpose();
+        submesh.setGridVertices(G);
+
+        //slice plane
+        P= submesh.slicePlaneVertices();
+        P.transpose() = A.linear()*P.transpose();
+        submesh.setSlicePlaneVertices(P);
+
+        //bounding box
+        BBox= submesh.bbox();
+        BBox.transpose() = A.linear()*BBox.transpose();
+        submesh.setBboxVerices(BBox);
+
+    }
+
+
+    //update the mesh's grid
+    //grid(m_vertices) or grid(submesh.gridpoints) <-this one is safer
 
 }

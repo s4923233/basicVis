@@ -34,12 +34,12 @@ class Skeleton
     public:
     void load(const std::string _tgf_filename);
 
-    const Eigen::MatrixXd& joints()const                {return m_joints;}
-    const Eigen::MatrixXi& boneEdges()const             {return m_boneEdges;}
-    const Eigen::VectorXi& boneParent()const            {return m_parent;}
-    const RotationList& jointOrientation()const         {return m_jointOrientation;}
-    const RotationList& worldSpaceRotations()const      {return m_worldSpaceRotations;}
-    const std::vector<Eigen::Vector3d>& worldSpaceTraslations()const      {return m_worldSpaceTraslations;}
+    const Eigen::MatrixXd& joints()const                                    {return m_joints;}
+    const Eigen::MatrixXi& boneEdges()const                                 {return m_boneEdges;}
+    const Eigen::VectorXi& boneParent()const                                {return m_parent;}
+    const RotationList& jointOrientation()const                             {return m_jointOrientation;}
+    const RotationList& worldSpaceRotations()const                          {return m_worldSpaceRotations;}
+    const std::vector<Eigen::Vector3d>& worldSpaceTraslations()const        {return m_worldSpaceTraslations;}
 
 
     void pose(RotationList& _pose);

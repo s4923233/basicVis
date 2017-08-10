@@ -299,6 +299,12 @@
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/build/libigl/glfw/src/glfw_config.h">
          <Option target="glfw_objects"/>
       </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/include/hrbf_core.h">
+         <Option target="headers"/>
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/include/hrbf_phi_funcs.h">
+         <Option target="headers"/>
+      </Unit>
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/include/mesh.h">
          <Option target="headers"/>
       </Unit>
@@ -308,10 +314,13 @@
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/include/skinCluster.h">
          <Option target="headers"/>
       </Unit>
-      <Unit filename="/Users/federicoleone/MasterProject/basicVis/src/main.cpp">
-         <Option target="basicVis_bin"/>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/include/submesh.h">
+         <Option target="headers"/>
       </Unit>
-      <Unit filename="/Users/federicoleone/MasterProject/basicVis/src/main_backup.cpp">
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/include/utils.h">
+         <Option target="headers"/>
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/src/main.cpp">
          <Option target="basicVis_bin"/>
       </Unit>
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/src/mesh.cpp">
@@ -321,6 +330,12 @@
          <Option target="basicVis_bin"/>
       </Unit>
       <Unit filename="/Users/federicoleone/MasterProject/basicVis/src/skinCluster.cpp">
+         <Option target="basicVis_bin"/>
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/src/submesh.cpp">
+         <Option target="basicVis_bin"/>
+      </Unit>
+      <Unit filename="/Users/federicoleone/MasterProject/basicVis/src/utils.cpp">
          <Option target="basicVis_bin"/>
       </Unit>
       <Unit filename="/Users/federicoleone/libigl/external/nanogui/ext/glfw/include/GLFW/glfw3.h">
